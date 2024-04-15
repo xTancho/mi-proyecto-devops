@@ -15,7 +15,7 @@ app.post("/calcular", (req, res) => {
     return res.send({ resultado: operacion.num1 - operacion.num2 });
   } else if (operacion.operacion === "div") {
     return res.send({ resultado: operacion.num1 / operacion.num2 });
-  } else if (operacion.operacion === "multi") {
+  } else if (operacion.operacion === "mul") {
     return res.send({ resultado: operacion.num1 * operacion.num2 });
   }
   return res.send({ resultado: "hola mundo" });
