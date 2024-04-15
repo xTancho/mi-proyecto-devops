@@ -9,13 +9,13 @@ app.get("/", (req, res) => {
 
 app.post("/calcular", (req, res) => {
   const operacion = req.body;
-  if (operacion.operacion === "suma") {
+  if (operacion.operacion === "add") {
     return res.send({ resultado: operacion.num1 + operacion.num2 });
-  } else if (operacion.operacion === "resta") {
+  } else if (operacion.operacion === "min") {
     return res.send({ resultado: operacion.num1 - operacion.num2 });
-  } else if (operacion.operacion === "division") {
+  } else if (operacion.operacion === "div") {
     return res.send({ resultado: operacion.num1 / operacion.num2 });
-  } else if (operacion.operacion === "multiplicacion") {
+  } else if (operacion.operacion === "multi") {
     return res.send({ resultado: operacion.num1 * operacion.num2 });
   }
   return res.send({ resultado: "hola mundo" });
