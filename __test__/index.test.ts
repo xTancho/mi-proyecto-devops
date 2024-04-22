@@ -1,7 +1,7 @@
 import { describe, expect, test } from "@jest/globals";
-import app, { restar, sumar, dividir, multiplicar } from "../src";
 import request from "supertest";
-import { normalize } from "path";
+import { restar, sumar, dividir, multiplicar } from "../src/calcular.js";
+import app from "../src/server.js";
 
 describe("index module testing", () => {
 
