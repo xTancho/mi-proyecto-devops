@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import app, { restar, sumar, dividir, multiplicar } from "..";
+import app, { restar, sumar, dividir, multiplicar } from "../src";
 import request from "supertest";
 import { normalize } from "path";
 
