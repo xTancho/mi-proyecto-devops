@@ -26,7 +26,7 @@ pipeline {
         }
         stage('hacer build') {
             steps {
-                sh 'npm run buil'
+                sh 'npm run build'
             }
         }
     }
