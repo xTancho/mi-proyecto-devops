@@ -21,7 +21,7 @@ pipeline {
         }
         stage('genear ejecutar test') {
             steps {
-                sh 'npm run test:coverage'
+                sh 'npm run test'
             }
         }
         stage('hacer build') {
