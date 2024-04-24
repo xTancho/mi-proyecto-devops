@@ -15,7 +15,7 @@ describe("index module testing", () => {
 
     test("dividir dos numeros", () => {
         expect(dividir(10, 2)).toBe(5);
-        expect(dividir(0, 0)).toThrow(/dividir/);
+        expect(() => dividir(0, 0)).toThrow(/dividir/);
         expect(dividir(100, 2)).toBe(50);
         expect(dividir(100, 2)).toBeDefined();
         expect(dividir(null, 2)).not.toBeDefined()
