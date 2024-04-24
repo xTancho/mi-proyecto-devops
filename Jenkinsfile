@@ -29,5 +29,10 @@ pipeline {
                 }
             }
         }
+        stage('docker pipeline') {
+            steps {
+                sh 'docker build -t mi-proyecto-devops .'
+            }
+        }
     }
 }
