@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("pipeline node") {
             agent {
-                docker { node:20.11.1-alpine3.19 }
+                docker { 'node:20.11.1-alpine3.19' }
             }
             stages {
                 stage("checkout") {
