@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage("pipeline node") {
             agent {
-                docker { image 'node:20.11.1-alpine3.19' }
+                docker { 
+                    image 'node:20.11.1-alpine3.19' 
+                    reuseNode true
+                }
             }
             stages {
                 stage('instalar dependencias') {
