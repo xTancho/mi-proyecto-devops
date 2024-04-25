@@ -28,5 +28,10 @@ pipeline {
                 }
             }
         }
+        stage('hacer build') {
+            steps {
+                sh 'docker build -t mi-proyecto-devops .'
+            }
+        }
     }
 }
