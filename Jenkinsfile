@@ -37,7 +37,9 @@ pipeline {
                         }
                     }
                     steps {
-                        sh 'sonar-scanner'
+                        withSonarQubeEnv('sonarqube') {
+                            sh 'sonar-scanner'
+                        }
                     }
                 }
                 stage("Quality Gate") {
