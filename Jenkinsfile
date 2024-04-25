@@ -26,6 +26,27 @@ pipeline {
                 }
             }
         }
+        stage("code quality") {
+            stages {
+                stage("build & SonarQube analysis") {
+                    agent docker { 
+                        image 'sonarsource/sonar-scanner-cli'
+                        reuseNode true
+                    }
+                    steps {
+                        sh 'sonar-scanner'
+                    }
+                }
+                stage("Quality Gate") {
+                    steps {
+                        timeout(time: 1, unit: 'HOURS') {
+                            waitForQualityGate abortPipeline: true
+                        }
+                    }
+                }
+            }
+        }
+
         stage('hacer build') {
             steps {
                 sh 'docker build -t mi-proyecto-devops .'
