@@ -25,5 +25,10 @@ pipeline {
                 }
             }
         }
+        stage('crear imagen docker') {
+            steps {
+                sh 'docker build -t mi-proyecto-devops .'
+            }
+        }
     }
 }
