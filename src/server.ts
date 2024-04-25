@@ -1,6 +1,6 @@
 import express from "express";
 import { dividir, multiplicar, restar, sumar } from "./calcular.js";
-
+import { apiKey } from "./environment.js";
 const app = express();
 app.use(express.json());
 
@@ -22,6 +22,8 @@ app.post("/calcular", (req, res) => {
   return res.send({ resultado: "hola mundo" });
 });
 
-
+app.get("/mi-api", (req, res) => {
+  return res.send({ apiKey });
+});
 
 export default app;
