@@ -29,9 +29,11 @@ pipeline {
         stage("code quality") {
             stages {
                 stage("build & SonarQube analysis") {
-                    agent docker { 
-                        image 'sonarsource/sonar-scanner-cli'
-                        reuseNode true
+                    agent { 
+                        docker { 
+                            image 'sonarsource/sonar-scanner-cli'
+                            reuseNode true
+                        }
                     }
                     steps {
                         sh 'sonar-scanner'
