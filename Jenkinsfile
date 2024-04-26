@@ -28,7 +28,10 @@ pipeline {
         }
         stage('crear imagen docker') {
             steps {
-                sh 'docker build -t mi-proyecto-devops .'
+                sh 'docker build -t localhost:8082/mi-proyecto-devops .'
+                sh "docker tag localhost:8082/mi-proyecto-devops localhost:8082/mi-proyecto-devops:${env.BUILD_NUMBER}"
+                sh 'docker push localhost:8082/mi-proyecto-devops'
+                sh "docker push localhost:8082/mi-proyecto-devops:${env.BUILD_NUMBER}"
             }
         }
     }
