@@ -29,11 +29,11 @@ pipeline {
         stage('crear imagen docker') {
                 steps {
                     script {
-                        docker.withRegistry('http://nexus:8082', 'nexus-key') {
-                            sh 'docker build -t nexus:8082/mi-proyecto-devops .'
-                            sh "docker tag nexus:8082/mi-proyecto-devops nexus:8082/mi-proyecto-devops:${env.BUILD_NUMBER}"
-                            sh 'docker push nexus:8082/mi-proyecto-devops'
-                            sh "docker push nexus:8082/mi-proyecto-devops:${env.BUILD_NUMBER}"
+                        docker.withRegistry('http://localhost:8082', 'nexus-key') {
+                            sh 'docker build -t localhost:8082/mi-proyecto-devops .'
+                            sh "docker tag localhost:8082/mi-proyecto-devops localhost:8082/mi-proyecto-devops:${env.BUILD_NUMBER}"
+                            sh 'docker push localhost:8082/mi-proyecto-devops'
+                            sh "docker push localhost:8082/mi-proyecto-devops:${env.BUILD_NUMBER}"
                         }
                     }
                 }
